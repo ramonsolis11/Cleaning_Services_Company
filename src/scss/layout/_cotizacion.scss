@@ -1,0 +1,488 @@
+.contenedor-cotizacion{
+    padding-top: $separacion + 10;
+}
+.instrucciones-cotizacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1{
+        color: $azul;
+    }
+    p{
+        color:#ff0f0f;
+        font-weight: $bold;
+    }
+}
+.lista-instrucciones{
+        padding: 0;
+    li{
+        list-style:decimal;
+        font-size: 2rem;
+    }
+}
+
+.contenido-cotizacion{
+    display: none;    
+}
+
+.cotizacion-activa{
+    display:block !important; 
+}
+
+
+/*Listado de servicios*/
+.listado-servicios{
+    margin-top: 5rem;
+    @include grid(1,fr);
+    row-gap: 2rem;
+    .ticket{
+        grid-row: 4/5;
+    }
+    
+    @include tablet{
+        
+        @include grid(3,1fr);
+        gap: 2rem;
+        .ticket{
+            grid-column: 3/4;
+            grid-row: 1/3;
+        }
+        .servicio-cotizacion[data-id-servicio="1"]{
+            grid-column: 1/3;
+            grid-row: 1/2;
+        }
+        
+    }
+    @include escritorio{
+        @include grid(4,1fr);
+        gap: 2rem;
+
+        .servicio-cotizacion[data-id-servicio="1"]{
+            grid-column: 2/3;
+        }
+        .ticket{
+            grid-column: 4/5;
+        }
+        
+        
+    }
+    
+}
+
+.servicio-cotizacion{
+    position: relative;
+   
+    padding: 4rem;
+@include escritorio{
+    display: flex;
+    height: 56rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+  
+}
+transition: all .3s ease-in-out;
+-webkit-box-shadow: 10px 10px 14px -7px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 14px -7px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 14px -7px rgba(0,0,0,0.75);
+
+
+&:hover{
+    background-color: $azul;
+    p{
+        color: $blanco;
+    }
+    .btn-add-servicio{
+        background-color: $amarillo;
+        color: $blanco;
+    }
+}
+
+    .precio, .nombre-servicio, .detalles-cotizacion, .dias-servicio{
+        text-align: center;
+    }
+    
+    .precio{
+        color: $azul;
+        font-weight: bold;
+        span{
+            color: $amarillo;
+            font-weight: $bold;
+        }
+    }
+
+    .nombre-servicio{
+        color:$azul;
+        font-weight: $bold;
+    }
+
+    .detalles-cotizacion{
+        font-size: 1.6rem;
+        color: rgb(122, 122, 122);
+    }
+
+    .dias-servicio{
+        color: $azul;
+
+        span{
+            color: $amarillo;
+            font-weight: $bold;
+        }
+    }
+    &:hover{
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+}
+.ticket{
+    margin: 0 auto;
+    padding: 3rem;
+    width:30rem;
+    border: 1px solid #eee;
+  
+    
+}
+.encabezado-ticket{
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   img{
+       width:13rem;
+   }
+
+   p{
+       color: $azul;
+       text-transform: capitalize;
+       font-weight: $bold;
+   }
+   border-bottom: 1px dotted $azul;
+}
+.numero-servicios{
+   background-color:#f4f4f4;
+   padding: 1rem;
+    p{
+       
+        margin-top: 0;
+        color: #353535;
+        font-size: 1.8rem;
+    }
+    .numero-ingresados{
+        color:#000;
+        margin-bottom: 0;
+        font-weight: $bold;
+    }
+    border-bottom: 1px dotted $azul;
+}
+.servicios-ingresados{
+    padding:  1rem;
+    p{
+        margin-top: 0;
+        font-size: 1.8rem;
+    }
+    border-bottom: 1px dotted $azul;
+    .servicio-seleccionado{
+        font-weight: $bold;
+        color: #353535;
+        width: 90%;
+        span{
+            color:$amarillo;
+            font-weight: $bold;
+        }
+        
+    }
+}
+/*separador de precios*/
+.separado-precios{
+    display: flex;
+    
+}
+.btn-borrar{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    font-size: 2.2rem;
+    background:$azul;
+    color:$blanco;
+    font-weight: $bold;
+    width:25px;
+    height:25px;
+    border-radius:50%;
+    user-select: none;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+.total-servicios{
+    display:flex;
+    justify-content:space-between;
+    background-color:#f4f4f4;
+    padding:1rem;
+    p{
+        margin-top: 0;
+    }
+    border-bottom: 1px dotted $azul;
+    p{
+        color: #353535;
+    }
+    .suma-total{
+        color: $amarillo;
+        font-size: 2.2rem;
+        font-weight:$bold;
+    }
+}
+
+.botones-cotizacion{
+    display:flex;
+    flex-direction: column;
+    @include tablet{
+        flex-direction: row;
+        button{
+            flex: 1;
+        }
+    }
+    button{
+       
+        border: none;
+       
+        background-color: $blanco;
+        padding: 1rem;
+        font-size: 2rem;
+        color:$azul;
+        margin-bottom: 1rem;
+        &:hover{
+            cursor: pointer;
+        }
+        display:block;
+
+        @include tablet{
+            display:inline-block;
+        }
+    }
+}
+
+button.activo-cotizacion{
+    border-bottom: 3px solid $amarillo;
+    color: $amarillo;
+    font-weight: $bold;
+}
+
+
+.servicio-click{
+    background-color:$azul;
+   
+    p{
+        color: $blanco !important;
+    }
+    .btn-add-servicio{
+        background-color: $amarillo;
+        color: $blanco;
+    }
+}
+.no-disponible{
+    font-size: 5rem;
+    text-align: center;
+    grid-column: 1/3;
+}
+/*Formulario*/
+
+.datos-cotizacion{
+    margin-top: 2rem;
+    -webkit-box-shadow: 4px 6px 25px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 6px 25px -7px rgba(0,0,0,0.75);
+    box-shadow: 4px 6px 25px -7px rgba(0,0,0,0.75);
+    padding: 5rem;
+    width:100%;
+    @include tablet{
+        width: 50%;
+    }
+
+}
+.inputs-cotizacion{
+    label{
+        display:block;
+        color: $azul;
+        margin-bottom: 1.2rem;
+        margin-top: 1rem;
+        font-size: 1.8rem;
+        font-weight: $bold;
+    }
+    input, textarea{
+        border: 1px solid $azul;
+        width:100%;
+        padding: .5rem;
+        transition: all .3s ease-in-out;
+        &:focus{
+
+            border: 1px solid $amarillo;
+        }
+    }
+   
+}
+.inputs-cotizacion{
+    button{
+        margin-top: 1rem;
+        border: none;
+    }
+}
+
+/*Resumen*/
+.resumen-cita, .resumen-servicio{
+    h2{
+        color: $azul;
+    }
+}
+.resumen-cita{
+    p{
+        color: $azul;
+    }
+    span{
+        color:$amarillo;
+        font-weight: $bold;
+    }
+}
+
+.servicio-cliente{
+    p{
+        color: $azul;
+        
+    }
+    span{
+        font-weight: $bold;
+        color:$amarillo;
+    }
+}
+.imprimir-ticket{
+    input{
+        border: none;
+    }
+}
+
+.total-pagar{
+    span{
+        color: $amarillo;
+        font-weight: $bold;
+    }
+}
+.resumen-pagar{
+    @include tablet{
+        @include grid(2,1fr);
+    }
+}
+
+.logo-ticket{
+    display: flex;
+    align-items: center;
+}
+
+.swal2-confirm {
+    background-color: $azul !important;
+    font-size: 1.5rem !important;
+    font-weight: $bold;
+    &:focus{
+        box-shadow: unset!important;
+    }
+}
+.swal2-html-container{
+    font-size: 1.8rem !important;
+}
+
+/*Botones*/
+.contenedor-controles{
+    display: flex;
+    justify-content:center;
+    .controles{
+        padding: 1rem 1.2rem;
+        border: none;
+        margin-right: 1.2rem;
+        margin-top: 2rem;
+
+        &:hover{
+            cursor:pointer;
+        }
+    }
+
+    @include tablet{
+        .controles{
+            margin-right: 1.5rem;
+          
+        }
+        justify-content:flex-end;
+        
+    }
+  
+   
+}
+
+/*animación de escoba*/
+.escoba{
+    width:8rem;
+    animation: izquierda-derecha 1.2s ease-in-out infinite;
+    position: relative;
+}
+
+@keyframes izquierda-derecha {
+    25%{
+        transform: rotate(-45deg);
+        transition:all .3s ease-in-out;
+    }
+    50%{
+       
+        transform:rotate(45deg);
+        transition:all .3s ease-in-out;
+    }
+
+    75%{
+        transform:rotate(-45deg);
+        transition:all .3s ease-in-out;
+    }
+    100%{
+        transform: rotate(45deg);
+        transition:all .3s ease-in-out;
+    }
+}
+
+/*El mas vendido*/
+
+.servicio-cotizacion[data-id-servicio="1"]{
+    border: 4px solid #008F39;
+    position: relative;
+ 
+}
+
+.servicio-cotizacion[data-id-servicio="1"]::before{
+    content: 'más vendido';
+    background-color: #008F39;
+    color: $blanco;
+    position: absolute;
+    
+    width:100%;
+    padding: 1rem 4rem;
+    top: 0;
+    right: 0;
+
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    
+}
+
+.btn-add-servicio{
+    display: block;
+    border: none;
+    background-color: $blanco;
+    border:2px solid $amarillo;
+    padding:1rem 2rem;
+    color: $amarillo;
+    font-weight: bold;
+    width: 100%;
+    transition: all .3s ease-in-out;
+
+    &:hover{
+        cursor: pointer;
+        background-color: $amarillo;
+        color: $blanco;
+    }
+}

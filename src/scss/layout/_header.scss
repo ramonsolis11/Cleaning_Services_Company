@@ -1,0 +1,72 @@
+.cabezera{
+    background: url(/build/img/bg_limpieza.jpg) no-repeat center right;
+    background-size: cover;
+    height: 100vh;
+    min-height:80rem;
+    position: relative;
+    z-index: 1;
+    @include tablet{
+        background: url(/build/img/bg_limpieza.jpg) no-repeat top right fixed;
+        background-size: cover;
+    }
+   
+
+   @include difuminado-transparente($negroTransparente);
+}
+
+.contenido-header{
+    @include alineado-verticalmente(center);
+    position: relative;
+    height: 100%;
+    z-index: 1;
+
+    @include tablet{
+        padding-top: 8rem;
+    }
+}
+
+
+.contenido-texto{
+    margin-top: 10rem;
+    h1{
+        text-transform: capitalize;
+        color:$blanco;
+        text-align: center;
+        margin: 0;
+        @include tablet{
+            text-align: left;
+            
+        }
+
+        span{
+            color: $amarillo;
+        }
+
+        
+    }
+    @include tablet{
+        margin-top:0;
+    }
+
+}
+
+ .contenido-logo{
+    img{
+        display: none;
+        @include tablet{
+             display: unset;
+        }
+    }
+
+    
+}
+.contenedor-boton{
+    padding-top: 3rem;
+    @include centrar-justify;
+
+    @include tablet{
+        justify-content: flex-start;
+    }
+    
+}
+

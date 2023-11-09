@@ -1,0 +1,92 @@
+.contenido-servicio{
+    display:flex;
+    flex-direction: column;
+    .imagenes-servicio{
+        order: -1;
+    }
+   
+    @include tablet{
+       
+        @include grid(2,1fr);
+
+        .imagenes-servicio{
+            grid-column: 2/3;
+        }
+        .texto-servicio{
+            grid-row: 1/2;
+        }
+    }
+}
+.lista-beneficios{
+    .beneficio{
+        display: flex;
+    }
+}
+
+
+
+.imagen-beneficio{
+   display: flex;
+   align-items: center;
+   font-size: 5rem;
+   margin-right: 2rem;
+   color: $azulClaro;
+}
+.texto-servicio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h2{
+        color:$azul;
+        
+        @include adorno-texto(1rem);
+        text-align: center;
+    }
+    p{
+        text-align: center;
+       
+    }
+
+    @include tablet{
+        h2{
+            text-align: left;
+        }
+        p{
+            text-align: left;
+            margin-right: 2rem;
+        }
+    }
+
+    @include escritorio{
+        p{
+            text-align: justify;
+        }
+    }
+
+    
+}
+.texto-beneficio{
+    margin-right: 2rem;
+
+}
+.imagenes-servicio{
+   
+    @include tablet{
+        display: flex;
+        align-items:center;
+    }
+    @include escritorio{
+        display: unset;
+    }
+}
+.boton-beneficio{
+    order: 4;
+    margin-top: 2rem;
+    display: flex;
+    justify-content:center;
+    margin-bottom: 2rem;
+    @include escritorio{
+        display: unset;
+    }
+
+}

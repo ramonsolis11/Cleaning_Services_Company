@@ -1,0 +1,240 @@
+.vista-servicios{
+    @include banner-bg-imagen( url(/build/img/nosotros1.jpg));
+    background-attachment: unset;
+    background-position: top;
+    @include difuminado-transparente($negroTransparente);
+  
+}
+@include tablet{
+    .vista-servicios{
+        background-attachment: fixed;
+    }
+}
+.texto-vista-servicios{
+   @include texto-bg-transparente;
+}
+
+//boton de contratar
+.boton-contratar-servicio{
+    margin-top: 5rem;
+    button{
+        font-size: 2rem;
+        border: none;
+
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+.link-menu{
+    text-decoration: none;
+}
+.link-menu:visited{
+    color: black;
+}
+.link-menu:link{
+    text-decoration: none;
+    color: black;
+}
+.contenedor-menu-servicios{
+    padding: $separacion;
+    margin-top: 5rem;
+    @include tablet{
+        @include grid(2,1fr);
+        gap: 1rem;
+    }
+    @include escritorio{
+        @include grid(4,1fr);
+        column-gap: 1rem;
+        
+    }
+    
+}
+.menu-servicio{
+    padding: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    @include tablet{
+        padding: 0;
+        margin-bottom: 0;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    border: 1px solid $azul;
+    height: 10rem;
+    @include tablet{
+        height: 17rem;
+    }
+    @include escritorio{
+        height: 20rem;
+    }
+    opacity: .5;
+    background-color: $azulBlanco;
+    i{
+        transition: all .3s ease;
+        font-size: 3rem;
+        @include tablet{
+           font-size: 8.4rem;
+        }
+        @include escritorio{
+           font-size: 9rem;
+        }
+    
+    }
+    p{
+        font-size: 1.8rem;
+        text-align: center;
+        @include tablet{
+            font-size: 2.2rem;
+            display: none;
+        }
+        color: $azul;
+        animation: slide .3s ease;
+    }
+    &:hover{
+        opacity: 1;
+        cursor: pointer;
+        
+        i{
+            transform: scale(1.2);
+            color: $amarillo;
+        }
+        p{
+            display: block;
+           
+        }
+    }
+    
+}
+.servicio-activo{
+        border: 1.5px solid $amarillo;
+        opacity: 1;
+        cursor: pointer;
+       
+        i{
+            transform: scale(1.2);
+            color:$amarillo;
+        }
+        p{
+            display: block;
+           
+        }
+    
+}
+@keyframes slideX{
+    0%{
+     
+        transform: scale(1.1);
+        transform: translateX(-100%);
+        
+    }
+    100%{
+        
+        // transform: scale(1);
+        transform: translateX(0);
+        
+    }
+  }
+.contenedor-descripcion-servicios{
+    overflow: hidden;
+    padding: 0 $separacion;
+}
+.descripcion-servicio{
+    animation: slideX .3s ease;
+    display: none;
+
+}
+.descripcion-activa{
+    overflow: hidden;
+    animation: slideX .3s ease;
+    display: grid;
+    .descripcion-imagen-servicio{
+        grid-row: 1/2;
+    }
+    grid-template-columns: 1,1fr;
+    @include tablet{
+        height: 70rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.descripcion-texto-servicio{
+    padding: 1rem;
+     p{
+         color: $azul;
+         font-size: 2rem;
+       
+         
+     }
+}
+.lista-servicios{
+    padding-left:0;
+
+    li{
+       color: $amarillo; 
+       display: flex;
+       align-items: center;
+       list-style: none;
+    }
+    p{
+        color: $azul;
+        margin: 1rem 0;
+        font-size: 2rem;
+
+    }
+    i{
+       color:$amarillo;
+      
+    }
+    i{
+        margin-right: 1rem;
+        font-size: 2.2rem;
+        order: -1;
+    }
+}
+.descripcion-texto-servicio, .descripcion-imagen-servicio{
+    flex:0 0  calc(50% - 1rem);
+}
+.descripcion-imagen-servicio{
+    padding: 1rem;
+  
+  
+    @include tablet{
+        display: flex;
+        align-items: center;
+        img{
+            height: 50rem;
+        }
+    }
+    @include escritorio{
+        display: flex;
+        justify-content: center;
+        img{
+            height: 55rem;
+        }
+    }
+}
+
+.parrafo-ventaja{
+    span{
+        font-weight: $bold;
+        text-transform: uppercase;
+    }
+}
+
+
+@keyframes mover {
+    50%{
+        transform: scale(1.1);
+        transition: all .3s ease;
+    } 
+    100%{
+        //transform: scale(1.1);
+        transition: all .3s ease;
+    }
+}

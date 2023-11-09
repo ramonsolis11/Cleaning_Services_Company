@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Guardianes Del Golfo | Seguridad Privada</title>
+    <link rel="shortcut icon" href="build/img/logoSinFondo.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/753766ce2c.js" crossorigin="anonymous"></script>
+    <link rel="preload" href="build/css/app.css" as="style">
+    <link rel="stylesheet" href="build/css/app.css">
+
+</head>
+
+<body>
+    <div class="navegacion-contenido">
+        <div class="navegacion-contenedor contenedor">
+            <div class="navegacion-logo">
+                <a href="/"><p>Guardianes Del Golfo</p></a>
+            </div>
+            <nav class="navegacion">
+                <a href="index.html" data-numero="1">Inicio</a>
+                <a href="nosotros.html" data-numero="2">Nosotros</a>
+                <a href="limpieza.html" data-numero="3">Limpieza Profesional</a>
+                <a href="cotizacion.html" data-numero="4">Cotizacion</a>
+                <a href="contacto.html" data-numero="5">Contacto</a>
+
+            </nav>
+            <div class="menu-movil" id="hamburguesa">
+                <button>
+                    <span class="arriba"></span>
+                    <span class="medio"></span>
+                    <span class="abajo"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="contenedor-cotizacion contenedor">
+        <div class="instrucciones-cotizacion">
+            <h1>Personaliza tu cotización</h1>
+            <p>*Para obtener un servicio más personalizado, debes seguir los
+                siguientes pasos*
+            </p>
+            <ul class="lista-instrucciones">
+                <li>Seleccionar el servicio que deseas
+
+                </li>
+                <li>Llenar el formulario con tus datos de contacto y el dia
+                    en el que deseas que el servicio de limpieza sea impartido
+                </li>
+                <li>Al final se le mostrara un resumen con su total a pagar y puede descargar
+                    el ticket en un archivo pdf
+                </li>
+            </ul>
+        </div>
+
+        <div class="app-cotizacion">
+            <nav class="botones-cotizacion">
+                <button type="button" data-paso="1" class="activo-cotizacion">Selecciona tu servicio</button>
+                <button type="button" data-paso="2">Ingresa tus datos</button>
+                <button type="button" data-paso="3">Resumen</button>
+            </nav>
+            <div class="contenido-cotizacion cotizacion-activa" data-paso="1">
+                <div class="listado-servicios">
+
+                    <div class="ticket">
+                        <div class="encabezado-ticket">
+                            <img src="/build/img/logo.png" alt="">
+                            <p>Guardianes del golfo</p>
+                        </div>
+                        <div class="numero-servicios">
+                            <p>Cantidad de servicios ingresados</p>
+                            <p class="numero-ingresados"></p>
+                        </div>
+                        <div class="servicios-ingresados">
+                            <p>Sus servicios seleccionados</p>
+
+                        </div>
+                        <div class="total-servicios">
+                            <p>Total: </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contenedor-controles">
+                    <button class="controles anterior boton-primario azul">&Lt; Anterior</button>
+                    <button class="controles siguiente boton-primario azul">Siguiente &Gt; </button>
+                </div>
+              <!-- <div class="animacion-click">
+                <img class="escoba"src="src/img/escoba.png" alt="">
+              </div> -->
+            </div>
+            <div class="contenido-cotizacion" data-paso="2">
+                <form action="" class="datos-cotizacion contenedor">
+                    <div class="inputs-cotizacion">
+                        <label for="">Nombre</label>
+                        <input type="text" id="nombre-cotizacion">
+                    </div>
+                    <div class="inputs-cotizacion">
+                        <label for="">Telefono</label>
+                        <input type="tel" id="telefono-cotizacion">
+                    </div>
+                    <div class="inputs-cotizacion">
+                        <label for="">Correo</label>
+                        <input type="email" id="correo-cotizacion">
+                    </div>
+                    <div class="inputs-cotizacion">
+                        <label for="">Fecha</label>
+                        <input type="date" id="fecha-cotizacion">
+                    </div>
+                    <div class="inputs-cotizacion">
+                        <label for="">Hora</label>
+                        <input type="time" id="hora-cotizacion">
+                    </div>
+                    <div class="inputs-cotizacion">
+                        <label for="">Servicio seleccionado</label>
+                        <div class="servicios-cliente">
+
+                        </div>
+                    </div>
+                    <div class="inputs-cotizacion">
+                        <button type="submit" class="boton-primario amarillo">Enviar Cotizacion</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="contenido-cotizacion contenedor" data-paso="3">
+                <div class="resumen-pagar">
+                    <div class="datos-usuario">
+                        <div class="resumen-cita">
+                            <h2>Resumen de la cita</h2>
+                            <p><span>Nombre:</span> Azael</p>
+                            <p><span>Fecha:</span> 31-05-2021</p>
+                            <p><span>Hora:</span> 8:00</p>
+                        </div>
+                        <div class="resumen-servicio">
+                            <h2>Resumen del servicio</h2>
+                            <div class="servicio-cliente">
+
+                                <p>Limpieza profesional</p>
+                                <p> <span>$</span> 2500</p>
+                            </div>
+                            <div class="servicio-cliente">
+                                <p>Limpieza profesional</p>
+                                <p><span>$</span> 900</p>
+                            </div>
+                            <div class="total-pagar">
+                                <p>Total: <span>$3400</span> </p>
+                            </div>
+                        </div>
+                        <div class="imprimir-ticket">
+                            <input type="button" class="boton-primario azul" value="Imprimir ticket">
+                        </div>
+                    </div>
+                    <div class="logo-ticket">
+                        <img src="/build/img/logoSinFondo.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="informacion-contacto">
+        <div class="alinear-iconos-contacto contenedor">
+            <div class="iconos-contacto">
+                <div class="icono-contacto">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="texto-icono-contacto">
+                    <h4>Dirección</h4>
+                    <p>Veracruz, ver</p>
+                </div>
+            </div>
+
+            <div class="iconos-contacto">
+                <div class="icono-contacto">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="texto-icono-contacto">
+                    <h4>Teléfono</h4>
+                    <p>+52 229-591-22-46</p>
+                </div>
+            </div>
+
+            <div class="iconos-contacto">
+                <div class="icono-contacto">
+                    <i class=" far fa-envelope"></i>
+                </div>
+                <div class="texto-icono-contacto">
+                    <h4>Correo</h4>
+
+                    <p>ventas@guardianesdelgolfo.com.mx</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <div class="contenedor-footer contenedor">
+            <div class="logo-footer alinear-logo">
+                <img src="build/img/logoSinFondo.png" alt="">
+                <p>Somos tan grandes como grande es nuestra gente</p>
+            </div>
+            <div class="enlaces-footer ultimo-enlaces">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="limpieza.html">Limpieza Profesional</a></li>
+                    <li><a href="cotizar.html">Cotizar</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="enlaces-footer">
+                <h4>Limpieza profesional</h4>
+                <ul>
+                    <li><a href="#">Analisis y Diagnostico</a></li>
+                    <li><a href="#">Propuesta de solución</a></li>
+                    <li><a href="#">Herramientas de Higiene</a></li>
+                    <li><a href="#">Protocolos de higiene</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="derechos-footer contenedor">
+            <div class="copyright">
+              <p class="copyright">© 2023 <a href="#" class="copyright-link"> Innova Web Marketing </a> Todos los Derechos Reservados</p>
+            </div>
+          </div>
+    </footer>
+
+
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="preload" as="script" href="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="build/js/app.js" type="module"></script>
+    <script src="build/js/cotizacion.js"></script>
+</body>
+
+</html>
